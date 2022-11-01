@@ -1,4 +1,12 @@
-# Vet Clinic
+# Vet Clinic Database
+
+> Vet Clinic is a database which stores data releated to animals in the Vet clinic.
+> It is developed using the Postgres Database management system (DBMS).
+
+## Built With
+
+- **PostgreSQL**
+- **SQL**
 
 ## Getting Started
 
@@ -29,10 +37,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Hat tip to anyone whose code, documentation or help was used
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
