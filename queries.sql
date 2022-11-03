@@ -64,3 +64,13 @@ UPDATE animals SET weight_kg = -12.13, date_of_birth = '1993-04-02' WHERE name =
 UPDATE animals SET weight_kg = -45, date_of_birth = '2005-06-12' WHERE name = 'Angemon';
 
 UPDATE animals SET date_of_birth = '2005-06-12' WHERE name = 'Angemon';
+
+
+-- ---------------------Day-3 -----------------------------------
+SELECT name FROM  animals JOIN owners ON animals.owner_id = owners.id WHERE owners.id=4;
+SELECT animals.name FROM  animals JOIN species ON animals.species_id = species.id WHERE species.id=1;
+SELECT full_name,name FROM  owners LEFT JOIN animals ON owner_id = owners.id; 
+SELECT species.name, COUNT(*) FROM animals, species WHERE species_id = species.id GROUP BY species.name;
+SELECT name, full_name FROM animals JOIN owners ON animals.owner_id = owners.id WHERE full_name = 'Jennifer Orwell' and species_id = 2;
+SELECT full_name, name FROM animals LEFT JOIN owners ON owner_id = owners.id WHERE owners.id=5 and escape_attempts=0;
+SELECT full_name , COUNT(animals.name) AS total_animals FROM owners JOIN animals ON owner_id=owners.id GROUP BY owners.id ORDER BY total_animals DESC LIMIT 1;
