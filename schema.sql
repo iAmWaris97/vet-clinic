@@ -26,3 +26,14 @@ CREATE TABLE species(id INT GENERATED ALWAYS AS IDENTITY, name VARCHAR(255), PRI
 ALTER TABLE animals DROP COLUMN species;
 ALTER TABLE animals ADD species_id INT REFERENCES species(id);
 ALTER TABLE animals ADD owner_id INT REFERENCES owners(id);
+
+-- Day-4 ---------------
+
+-- Creating vets table
+CREATE TABLE vets( id INT GENERATED ALWAYS AS IDENTITY, name VARCHAR(50), age INT, date_of_graduation DATE, PRIMARY KEY (id));
+
+-- Creating specialization table
+CREATE TABLE specializations(species_id INT,vets_id INT,PRIMARY KEY(species_id,vets_id),FOREIGN KEY (species_id) REFERENCES species(id),FOREIGN KEY(vets_id) REFERENCES vets(id));
+
+-- Creating visits table
+CREATE TABLE visits(animal_id INT,vets_id INT,date_of_visit DATE,PRIMARY KEY(animal_id,vets_id,date_of_visit),FOREIGN KEY (animal_id) REFERENCES animals(id),FOREIGN KEY (vets_id) REFERENCES vets(id));
